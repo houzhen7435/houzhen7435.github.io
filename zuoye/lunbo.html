@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*隐藏到显示前*/
+			.lee-enter{
+				left: -800px !important;
+				opacity: 0;
+				/*background: red !important;*/
+			}
+			/*隐藏到显示时*/
+			.lee-enter-active{
+				transition: all 1s;
+			}
+			/*隐藏到显示后*/
+			.lee-enter-to{
+				/*background: blue;*/
+			}
+			/*显示到隐藏前*/
+			.lee-leave{
+				/*background: blue;*/
+			}
+			/*显示到隐藏时*/
+			.lee-leave-active{
+				transition: all 1s;
+			}
+			.lee-leave-to{
+				opacity: 0;
+				left: 800px !important;
+				/*background: red;*/
+			}
+			
+			/*隐藏到显示前*/
+			.lee2-enter{
+				left: 800px !important;
+				opacity: 0;
+				/*background: red !important;*/
+			}
+			/*隐藏到显示时*/
+			.lee2-enter-active{
+				transition: all 1s;
+			}
+			/*隐藏到显示后*/
+			.lee2-enter-to{
+				/*background: blue;*/
+			}
+			/*显示到隐藏前*/
+			.lee2-leave{
+				/*background: blue;*/
+			}
+			/*显示到隐藏时*/
+			.lee2-leave-active{
+				transition: all 1s;
+			}
+			.lee2-leave-to{
+				opacity: 0;
+				left: -800px !important;
+				/*background: red;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box" >
+			<lee style="text-align: center;"></lee>
+		</div>
+		<template id="lee">
+			<div>
+				<button @click="no1">下一个</button>
+				{{type}}
+				<button @click="no2">上一个</button>
+				<div style="width: 800px;margin: 0 auto;position: relative;">
+					<transition :name="t_type" v-for="(i,$index) in arr">
+						<div style="width: 800px;position: absolute;left: 0;top: 0;" v-show="type==$index">
+							<img :src="i" width="800px"/>
+						</div>	
+				</transition>
+				</div>
+			</div>
+		</template>
+	</body>
+	<script src="vue.js"></script>
+	<script>
+		Vue.component('lee', {
+			template: '#lee',
+			methods:{
+			   no1(){
+			   	this.t_type = 'lee'
+			   	this.type++
+			   	if(this.type >= 3){
+			   		this.type = 0
+			   	}
+			   },
+			   no2(){
+			   	this.t_type = 'lee2'
+			   	this.type--
+			   	if(this.type <=-1){
+			   		this.type = 2
+			   	}
+			   }
+			},
+			data() {
+				return {
+					type: 0,
+					t_type:'lee',
+					arr:[
+					'http://e.hiphotos.baidu.com/image/h%3D300/sign=a9e671b9a551f3dedcb2bf64a4eff0ec/4610b912c8fcc3cef70d70409845d688d53f20f7.jpg',
+					'http://g.hiphotos.baidu.com/image/h%3D300/sign=b5e4c905865494ee982209191df4e0e1/c2cec3fdfc03924590b2a9b58d94a4c27d1e2500.jpg',
+					'http://a.hiphotos.baidu.com/image/h%3D300/sign=a62e824376d98d1069d40a31113eb807/838ba61ea8d3fd1fc9c7b6853a4e251f94ca5f46.jpg'
+					]
+				}
+			}
+		})
+
+		new Vue({
+			el: "#box"
+		})
+	</script>
+
+</html>

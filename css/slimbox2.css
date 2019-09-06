@@ -11,7 +11,8 @@
 	cursor: pointer;
 }
 
-#lbCenter, #lbBottomContainer {
+#lbCenter,
+#lbBottomContainer {
 	position: absolute;
 	z-index: 9999;
 	overflow: hidden;
@@ -30,7 +31,8 @@
 	background-repeat: no-repeat;
 }
 
-#lbPrevLink, #lbNextLink {
+#lbPrevLink,
+#lbNextLink {
 	display: block;
 	position: absolute;
 	top: 0;
@@ -74,7 +76,8 @@
 	outline: none;
 }
 
-#lbCaption, #lbNumber {
+#lbCaption,
+#lbNumber {
 	margin-right: 71px;
 }
 

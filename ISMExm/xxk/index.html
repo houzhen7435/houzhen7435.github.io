@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+		<style>
+			* {
+				margin: 0 auto;
+			}
+
+			[v-cloak] {
+				display: none;
+			}
+
+			.co {
+				background: #FFFFFF !important;
+				color: blue;
+			}
+
+
+			.no1 {
+				min-height: 300px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box" v-cloak="">
+			<d-lee :textarr="arr" style="width: 600px;"></d-lee>
+		</div>
+		<template id="d">
+			<div>
+				<div style="border: 1px solid rgba(0,0,0,0.6);">
+					<div style="line-height: 60px;background: #CCCCCC; overflow: hidden;border-bottom: 1px solid rgba(0,0,0,0.6);">
+						<div v-for="(i,$index) in arr" class="border" style="float: left;padding: 0 20px;" :class="index==$index?'co':''"
+						 @click="index=$index">
+							{{i.title}}
+						</div>
+					</div>
+					<div class="no1" v-for="(i,$index) in arr" v-show="index==$index">
+						{{i.text}}
+					</div>
+				</div>
+			</div>
+		</template>
+	</body>
+	<script>
+		Vue.component('dLee', {
+			template: '#d',
+			props: ['textarr'],
+			data() {
+				return {
+					arr: this.textarr,
+					index: 0
+				}
+			}
+		})
+		new Vue({
+			el: "#box",
+			data: {
+				arr: [{
+						title: '首页',
+						text: 'index'
+					},
+					{
+						title: '列表',
+						text: 'list'
+					},
+					{
+						title: '列表',
+						text: 'list'
+					}
+				]
+			}
+		})
+	</script>
+
+</html>

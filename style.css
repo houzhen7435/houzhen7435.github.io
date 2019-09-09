@@ -88,7 +88,7 @@ p {
 
 blockquote.testimonial_block {
 	margin: 0;
-	background: url(images/comment.png) left top no-repeat;
+	background: url(img/comment.png) left top no-repeat;
 	padding-left: 80px
 }
 
@@ -121,7 +121,7 @@ cite span {
 	color: #fff;
 	margin: 0 0 7px 0;
 	padding: 0 0 0 20px;
-	background: url(images/templatemo_list.png) no-repeat scroll 0 6px
+	background: url(img/templatemo_list.png) no-repeat scroll 0 6px
 }
 
 .list_bullet li a {
@@ -214,7 +214,7 @@ img {
 	text-align: right;
 	color: #000;
 	font-size: 11px;
-	background: url(images/templatemo_header.png)
+	background: url(img/templatemo_header.png)
 }
 
 #templatemo_main {
@@ -228,7 +228,7 @@ img {
 
 #templatemo_footer_wrapper {
 	width: 100%;
-	background: url(images/templatemo_footer.png) center top no-repeat
+	background: url(img/templatemo_footer.png) center top no-repeat
 }
 
 #templatemo_footer {
@@ -251,7 +251,7 @@ img {
 	display: block;
 	width: 120px;
 	height: 60px;
-	background: url(images/templatemo_logo.png) no-repeat center top;
+	background: url(img/templatemo_logo.png) no-repeat center top;
 	text-indent: -10000px
 }
 
